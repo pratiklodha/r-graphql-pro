@@ -1,7 +1,6 @@
 # TYPEDEFS:
 
-type DatabaseObject_Event_Pathway
-  @additionalLabels(labels: ["DatabaseObject", "Event", "Pathway"]) {
+type DatabaseObject_Event_Pathway {
   _id: Long!
   dbId: Int!
   definition: String
