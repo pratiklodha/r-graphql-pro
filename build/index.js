@@ -32,7 +32,11 @@ var app = (0, _express2.default)();
  */
 
 var schema = (0, _neo4jGraphqlJs.makeAugmentedSchema)({
-  typeDefs: _graphqlSchema.typeDefs
+  typeDefs: _graphqlSchema.typeDefs,
+  config: {
+    query: true,
+    mutation: false
+  }
 });
 
 /*
@@ -40,7 +44,7 @@ var schema = (0, _neo4jGraphqlJs.makeAugmentedSchema)({
  * using credentials specified as environment variables
  * with fallback to defaults
  */
-var driver = _neo4jDriver.v1.driver(process.env.NEO4J_URI || "bolt://localhost:7687", _neo4jDriver.v1.auth.basic(process.env.NEO4J_USER || "neo4j", process.env.NEO4J_PASSWORD || "pratik"), { encrypted: "ENCRYPTION_OFF" });
+var driver = _neo4jDriver.v1.driver(process.env.NEO4J_URI || "bolt://localhost:7687", _neo4jDriver.v1.auth.basic(process.env.NEO4J_USER || "neo4j", process.env.NEO4J_PASSWORD || "letmein"), { encrypted: "ENCRYPTION_OFF" });
 
 /*
  * Create a new ApolloServer instance, serving the GraphQL schema
