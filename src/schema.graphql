@@ -1,7 +1,7 @@
 type AbstractModifiedResidue {
+  dbId: ID!
   alteredAminoAcidFragment: String
   coordinate: Int
-  dbId: ID!
   displayName: String
   endPositionInReferenceSequence: Int
   schemaClass: String
@@ -10,15 +10,15 @@ type AbstractModifiedResidue {
 }
 
 type Affiliation {
+  dbId: ID!
   address: String
-  dbId: Int!
   displayName: String!
   name: [String]!
   schemaClass: String!
 }
 
 type BlackBoxEvent {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   isChimeric: Boolean
   isInDisease: Boolean!
@@ -35,9 +35,9 @@ type BlackBoxEvent {
 }
 
 type Book {
+  dbId: ID!
   ISBN: String
   chapterTitle: String
-  dbId: ID!
   displayName: String!
   pages: String
   schemaClass: String!
@@ -46,7 +46,7 @@ type Book {
 }
 
 type CandidateSet {
-  dbId: Int!
+  dbId: ID!
   definition: String
   displayName: String!
   isInDisease: Boolean!
@@ -84,12 +84,12 @@ type ChemicalDrug {
 }
 
 type Compartment {
+  dbId: ID!
   accession: String!
   databaseName: String!
-  dbId: ID!
   definition: String!
   displayName: String!
-  name: String!
+  name: [String]!
   schemaClass: String!
   url: String!
 }
@@ -116,8 +116,8 @@ type ControlReference {
 }
 
 type CrosslinkedResidue {
-  coordinate: Int
   dbId: ID!
+  coordinate: Int
   displayName: String!
   schemaClass: String!
   secondCoordinate: Int
@@ -125,13 +125,13 @@ type CrosslinkedResidue {
 
 type DBInfo {
   checksum: Int!
-  name: String!
+  name: [String]!
   version: Int!
 }
 
 type DatabaseIdentifier {
-  databaseName: String!
   dbId: ID!
+  databaseName: String!
   displayName: String!
   identifier: String!
   schemaClass: String!
@@ -182,7 +182,7 @@ type DatabaseObject {
   label: String
   maxUnitCount: Int
   minUnitCount: Int
-  name: String
+  name: [String]!
   note: String
   oldStId: String
   orcidId: String
@@ -250,8 +250,8 @@ type Depolymerisation {
 }
 
 type Disease {
-  databaseName: String!
   dbId: ID!
+  databaseName: String!
   definition: String
   displayName: String!
   identifier: String!
@@ -280,7 +280,7 @@ type EntityFunctionalStatus {
 }
 
 type EntitySet {
-  dbId: Int!
+  dbId: ID!
   definition: String
   displayName: String!
   isInDisease: Boolean!
@@ -323,7 +323,7 @@ type Event {
   hasEHLD: Boolean
   stIdVersion: String
   releaseStatus: String
-  name: String
+  name: [String]!
   definition: String
   hasDiagram: Boolean
   isInferred: Boolean
@@ -340,8 +340,8 @@ type EvidenceType {
 }
 
 type ExternalOntology {
-  databaseName: String!
   dbId: ID!
+  databaseName: String!
   definition: String
   displayName: String!
   identifier: String!
@@ -385,8 +385,8 @@ type FragmentDeletionModification {
 }
 
 type FragmentInsertionModification {
-  coordinate: Int
   dbId: ID!
+  coordinate: Int
   displayName: String!
   endPositionInReferenceSequence: Int!
   schemaClass: String!
@@ -394,9 +394,9 @@ type FragmentInsertionModification {
 }
 
 type FragmentModification {
+  dbId: ID!
   alteredAminoAcidFragment: String
   coordinate: Int
-  dbId: ID!
   displayName: String
   endPositionInReferenceSequence: Int
   schemaClass: String
@@ -404,8 +404,8 @@ type FragmentModification {
 }
 
 type FragmentReplacedModification {
-  alteredAminoAcidFragment: String
   dbId: ID!
+  alteredAminoAcidFragment: String
   displayName: String!
   endPositionInReferenceSequence: Int!
   schemaClass: String!
@@ -426,55 +426,55 @@ type FunctionalStatusType {
 }
 
 type GO_BiologicalProcess {
+  dbId: ID!
   accession: String!
   databaseName: String!
-  dbId: ID!
   definition: String!
   displayName: String!
-  name: String!
+  name: [String]!
   schemaClass: String!
   url: String!
 }
 
 type GO_CellularComponent {
+  dbId: ID!
   accession: String!
   databaseName: String!
-  dbId: ID!
   definition: String!
   displayName: String!
-  name: String!
+  name: [String]!
   schemaClass: String!
   url: String!
 }
 
 type GO_MolecularFunction {
+  dbId: ID!
   accession: String!
   databaseName: String!
-  dbId: ID!
   definition: String!
   displayName: String!
   ecNumber: String
-  name: String!
+  name: [String]!
   schemaClass: String!
   url: String!
 }
 
 type GO_Term {
+  dbId: ID!
   accession: String!
   databaseName: String!
-  dbId: ID!
   definition: String!
   displayName: String!
   ecNumber: String
-  name: String!
+  name: [String]!
   schemaClass: String!
   url: String!
 }
 
 type GeneticallyModifiedResidue {
+  dbId: ID!
   alteredAminoAcidFragment: String
   coordinate: Int!
-  dbId: ID!
   displayName: String!
   endPositionInReferenceSequence: Int!
   schemaClass: String!
@@ -498,32 +498,32 @@ type GenomeEncodedEntity {
 }
 
 type GroupModifiedResidue {
-  coordinate: Int
   dbId: ID!
+  coordinate: Int
   displayName: String!
   schemaClass: String!
 }
 
 type InstanceEdit {
-  dateTime: String!
   dbId: ID!
+  dateTime: String!
   displayName: String!
   note: String
   schemaClass: String!
 }
 
 type InterChainCrosslinkedResidue {
-  coordinate: Int
   dbId: ID!
+  coordinate: Int
   displayName: String!
   schemaClass: String!
   secondCoordinate: Int
 }
 
 type Interaction {
+  dbId: ID!
   accession: [String]!
   databaseName: String!
-  dbId: ID!
   displayName: String!
   pubmed: [String]
   schemaClass: String!
@@ -532,8 +532,8 @@ type Interaction {
 }
 
 type IntraChainCrosslinkedResidue {
-  coordinate: Int!
   dbId: ID!
+  coordinate: Int!
   displayName: String!
   schemaClass: String!
   secondCoordinate: Int
@@ -552,8 +552,8 @@ type LiteratureReference {
 }
 
 type ModifiedResidue {
-  coordinate: Int
   dbId: ID!
+  coordinate: Int
   displayName: String!
   schemaClass: String!
 }
@@ -568,7 +568,7 @@ type NegativeGeneExpressionRegulation {
 }
 
 type NegativeRegulation {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   oldStId: String
   schemaClass: String!
@@ -630,7 +630,7 @@ type PhysicalEntity {
   isOrdered: Boolean
   maxUnitCount: Int
   minUnitCount: Int
-  name: String
+  name: [String]!
   oldStId: String
   referenceType: String
   schemaClass: String
@@ -683,7 +683,7 @@ type PositiveGeneExpressionRegulation {
 }
 
 type PositiveRegulation {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   oldStId: String
   schemaClass: String!
@@ -704,8 +704,8 @@ type ProteinDrug {
 }
 
 type PsiMod {
-  databaseName: String!
   dbId: ID!
+  databaseName: String!
   definition: String
   displayName: String!
   identifier: String!
@@ -717,7 +717,7 @@ type PsiMod {
 }
 
 type Publication {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   ISBN: String
   chapterTitle: String
@@ -732,7 +732,7 @@ type Publication {
 }
 
 type Reaction {
-  dbId: Int!
+  dbId: ID!
   definition: String
   displayName: String!
   isChimeric: Boolean
@@ -750,7 +750,7 @@ type Reaction {
 }
 
 type ReactionLikeEvent {
-  dbId: Int!
+  dbId: ID!
   definition: String
   displayName: String!
   isChimeric: Boolean
@@ -768,9 +768,9 @@ type ReactionLikeEvent {
 }
 
 type ReferenceDNASequence {
+  dbId: ID!
   comment: [String]
   databaseName: String!
-  dbId: Int!
   description: [String]
   displayName: String!
   geneName: [String]
@@ -784,8 +784,8 @@ type ReferenceDNASequence {
 }
 
 type ReferenceDatabase {
+  dbId: ID!
   accessUrl: String!
-  dbId: Int!
   displayName: String!
   name: [String]!
   schemaClass: String!
@@ -793,6 +793,7 @@ type ReferenceDatabase {
 }
 
 type ReferenceEntity {
+  dbId: ID!
   abbreviation: String
   approvalSource: [String]
   approved: Boolean!
@@ -800,7 +801,6 @@ type ReferenceEntity {
   checksum: String
   comment: [String]
   databaseName: String!
-  dbId: Int!
   description: [String]
   displayName: String!
   formula: String
@@ -821,11 +821,11 @@ type ReferenceEntity {
 }
 
 type ReferenceGeneProduct {
+  dbId: ID!
   chain: [String]
   checksum: String
   comment: [String]
   databaseName: String!
-  dbId: Int!
   description: [String]
   displayName: String!
   geneName: [String]
@@ -842,8 +842,8 @@ type ReferenceGeneProduct {
 }
 
 type ReferenceGroup {
+  dbId: ID!
   databaseName: String!
-  dbId: Int!
   displayName: String!
   formula: String
   identifier: String!
@@ -853,11 +853,11 @@ type ReferenceGroup {
 }
 
 type ReferenceIsoform {
+  dbId: ID!
   chain: [String]
   checksum: String
   comment: [String]
   databaseName: String!
-  dbId: Int!
   description: [String]
   displayName: String!
   geneName: [String]
@@ -874,8 +874,8 @@ type ReferenceIsoform {
 }
 
 type ReferenceMolecule {
+  dbId: ID!
   databaseName: String!
-  dbId: Int!
   displayName: String!
   formula: String
   geneName: [String]
@@ -889,9 +889,9 @@ type ReferenceMolecule {
 }
 
 type ReferenceRNASequence {
+  dbId: ID!
   comment: [String]
   databaseName: String!
-  dbId: Int!
   description: [String]
   displayName: String!
   geneName: [String]
@@ -902,11 +902,11 @@ type ReferenceRNASequence {
 }
 
 type ReferenceSequence {
+  dbId: ID!
   chain: [String]
   checksum: String
   comment: [String]
   databaseName: String!
-  dbId: Int!
   description: [String]
   displayName: String!
   geneName: [String]
@@ -923,11 +923,11 @@ type ReferenceSequence {
 }
 
 type ReferenceTherapeutic {
+  dbId: ID!
   abbreviation: String
   approvalSource: [String]
   approved: Boolean!
   databaseName: String!
-  dbId: Int!
   displayName: String!
   identifier: String!
   inn: String
@@ -938,7 +938,7 @@ type ReferenceTherapeutic {
 }
 
 type Regulation {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   oldStId: String
   schemaClass: String!
@@ -947,20 +947,20 @@ type Regulation {
 }
 
 type RegulationReference {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   schemaClass: String!
 }
 
 type ReplacedResidue {
+  dbId: ID!
   coordinate: Int!
-  dbId: Int!
   displayName: String!
   schemaClass: String!
 }
 
 type Requirement {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   oldStId: String
   schemaClass: String!
@@ -969,8 +969,8 @@ type Requirement {
 }
 
 type SequenceOntology {
+  dbId: ID!
   databaseName: String!
-  dbId: Int!
   definition: String!
   displayName: String!
   identifier: String!
@@ -981,7 +981,7 @@ type SequenceOntology {
 }
 
 type SimpleEntity {
-  dbId: Int!
+  dbId: ID!
   definition: String
   displayName: String!
   isInDisease: Boolean!
@@ -994,8 +994,8 @@ type SimpleEntity {
 }
 
 type Species {
+  dbId: ID!
   abbreviation: String!
-  dbId: Int!
   displayName: String!
   name: [String]!
   schemaClass: String!
@@ -1003,15 +1003,15 @@ type Species {
 }
 
 type Summation {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   schemaClass: String!
   text: String!
 }
 
 type Taxon {
+  dbId: ID!
   abbreviation: String!
-  dbId: Int!
   displayName: String!
   name: [String]!
   schemaClass: String!
@@ -1019,7 +1019,7 @@ type Taxon {
 }
 
 type TopLevelPathway {
-  dbId: Int!
+  dbId: ID!
   diagramHeight: Int!
   diagramWidth: Int!
   displayName: String!
@@ -1039,15 +1039,15 @@ type TopLevelPathway {
 }
 
 type TranslationalModification {
+  dbId: ID!
   coordinate: Int
-  dbId: Int!
   displayName: String!
   schemaClass: String!
   secondCoordinate: Int
 }
 
 type URL {
-  dbId: Int!
+  dbId: ID!
   displayName: String!
   schemaClass: String!
   title: String!
@@ -1055,9 +1055,9 @@ type URL {
 }
 
 type UndirectedInteraction {
+  dbId: ID!
   accession: [String]!
   databaseName: String!
-  dbId: Int!
   displayName: String!
   pubmed: [String]
   schemaClass: String!
