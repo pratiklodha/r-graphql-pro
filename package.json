@@ -1,18 +1,17 @@
 {
-  "name": "grand-stack-starter-api",
+  "name": "reactome-graphql-api",
   "version": "0.0.1",
-  "description": "API app for GRANDstack",
+  "description": "GraphQL interface for querying Reactome data",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "./node_modules/.bin/nodemon --watch src --ext js,graphql --exec babel-node  src/index.js",
     "build": "babel src -d build && shx cp .env build && shx cp src/schema.graphql build",
     "now-build": "babel src -d build && shx cp .env build && shx cp src/schema.graphql build",
-    "start": "npm run build && node build/index.js",
-    "seedDb": "./node_modules/.bin/babel-node src/seed/seed-db.js"
+    "start": "npm run build && node build/index.js"
   },
-  "author": "Pratik Lodha",
-  "license": "MIT",
+  "author": "Reactome Dev Team",
+  "license": "NA",
   "dependencies": {
     "apollo-boost": "^0.3.1",
     "apollo-cache-inmemory": "^1.6.3",

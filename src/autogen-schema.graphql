@@ -1,5 +1,6 @@
 # These typedefs were auto-generated using 'inferSchema' feature of neo4j-graphql-js library.
 # This file has no role in the development/production of Reactome GraphQL API.
+# Hence, if this file is deleted/removed from this folder then final API is not affected in any way.
 
 # TYPEDEFS:
 
