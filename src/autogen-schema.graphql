@@ -1,3 +1,6 @@
+# These typedefs were auto-generated using 'inferSchema' feature of neo4j-graphql-js library.
+# This file has no role in the development/production of Reactome GraphQL API.
+
 # TYPEDEFS:
 
 type DatabaseObject_Event_Pathway {
@@ -693,15 +696,6 @@ type DatabaseObject_Drug_PhysicalEntity_ProteinDrug {
   _id: Long!
   dbId: Int!
   definition: String
-  displayName: String!
-  isInDisease: Boolean!
-  name: [String]!
-  oldStId: String
-  schemaClass: String!
-  stId: String!
-  stIdVersion: String!
-
-  dbId: Int!
   displayName: String!
   isInDisease: Boolean!
   name: [String]!
