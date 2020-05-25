@@ -1,3 +1,5 @@
+# Reactome TypeDefs
+
 type AbstractModifiedResidue {
   dbId: ID!
   alteredAminoAcidFragment: String
@@ -331,6 +333,7 @@ type Event {
   diagramWidth: Int
   isChimeric: Boolean
   systematicName: String
+  #pathway: [Pathway] @relation(name: "hasEvent", direction: "OUT")
 }
 
 type EvidenceType {
@@ -510,6 +513,7 @@ type InstanceEdit {
   displayName: String!
   note: String
   schemaClass: String!
+  #person: [Person] @relation(name: "author", direction: "IN")
 }
 
 type InterChainCrosslinkedResidue {
@@ -607,6 +611,10 @@ type Pathway {
   speciesName: String!
   stId: String!
   stIdVersion: String!
+
+  hasEvent: [Event] @relation(name: "hasEvent", direction: "OUT")
+  #pathwayInferredFrom: [Event] @relation(name: "inferredFrom", direction: "OUT")
+  #event: [Event] @relation(name: "hasEvent", direction: "IN")
 }
 
 type Person {
@@ -618,6 +626,7 @@ type Person {
   project: String
   schemaClass: String!
   surname: String!
+  #instanceEdit: [InstanceEdit] @relation(name: "author", direction: "OUT")
 }
 
 type PhysicalEntity {
@@ -765,6 +774,11 @@ type ReactionLikeEvent {
   stId: String!
   stIdVersion: String!
   systematicName: String
+
+  input: [PhysicalEntity] @relation(name: "input", direction: "OUT")
+  output: [PhysicalEntity] @relation(name: "output", direction: "OUT")
+  catalystActivity: [CatalystActivity]
+    @relation(name: "catalystActivity", direction: "OUT")
 }
 
 type ReferenceDNASequence {
@@ -1064,6 +1078,49 @@ type UndirectedInteraction {
   score: Float!
   url: String!
 }
+
+# SAMPLE BUSINESS REVIEW SCHEMA
+
+# type User {
+#   id: ID!
+#   name: String
+#   friends: [User] @relation(name: "FRIENDS", direction: "BOTH")
+#   reviews: [Review] @relation(name: "WROTE", direction: "OUT")
+#   avgStars: Float
+#   numReviews: Int
+#   recommendations(first: Int = 3): [Business]
+# }
+
+# type Business {
+#   id: ID!
+#   name: String
+#   address: String
+#   city: String
+#   state: String
+#   avgStars: Float
+#   reviews: [Review] @relation(name: "REVIEWS", direction: "IN")
+#   categories: [Category] @relation(name: "IN_CATEGORY", direction: "OUT")
+# }
+
+# type Review {
+#   id: ID!
+#   stars: Int
+#   text: String
+#   date: Date
+#   business: Business @relation(name: "REVIEWS", direction: "OUT")
+#   user: User @relation(name: "WROTE", direction: "IN")
+# }
+
+# type Category {
+#   name: ID!
+#   businesses: [Business] @relation(name: "IN_CATEGORY", direction: "IN")
+# }
+
+# type Query {
+#   usersBySubstring(substring: String): [User]
+# }
+
+#--------------------------------------------------------------------------------------------------------------------
 
 # SAMPLE BUSINESS REVIEW SCHEMA
 
